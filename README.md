@@ -6,4 +6,4 @@ To make sure I never have to say,
 
 > "I learned that once... I just forgot it."
 
-Everything I learn goes here.
+Everything I learn, practice, and build ends up here.
