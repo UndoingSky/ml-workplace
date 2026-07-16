@@ -1,18 +1,19 @@
 import pandas as pd
-from io import StringIO
 
-csv_data = StringIO("""name,age,score,passed
-Asha,19,72,yes
-Ben,21,85,yes
-Chen,20,90,yes
-Dia,18,,no
-""")
+df = pd.DataFrame({
+    "age": ["19", "21", "20"],
+    "joined": ["2026-01-10", "2026-03-05", "2026-04-20"],
+})
 
-df = pd.read_csv(csv_data)
+# Convert text to numeric
+df["age"] = df["age"].astype(int)
 
-# print(df.head())
-# print(df.shape)
-# print(df.columns)
-# print(df.info())
-# print(df.describe())
-print(df.isna().sum())
+# Convert text to datetime
+df["joined"] = pd.to_datetime(df["joined"])
+
+print(df.dtypes)
+
+# You can now extract useful date parts
+df["join_year"] = df["joined"].dt.year
+df["join_month"] = df["joined"].dt.month
+print(df)
