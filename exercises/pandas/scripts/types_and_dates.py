@@ -1,5 +1,7 @@
 import pandas as pd
 
+# Example script extracted from exercises/pandas
+
 df = pd.DataFrame({
     "age": ["19", "21", "20"],
     "joined": ["2026-01-10", "2026-03-05", "2026-04-20"],
